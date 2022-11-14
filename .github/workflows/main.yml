@@ -12,15 +12,14 @@ jobs:
 
     - id: 'auth'
       name: 'Authenticate to GCP'
-      uses: 'google-github-actions/auth@v0'
+      uses: 'google-github-actions/setup-gcloud@master'
       with:
-        audience: "https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
-        workload_identity_provider: 'https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
-        service_account: 'github-actions@touchless-364916.iam.gserviceaccount.com'
+        project_id: touchless-364916
+        service_account_key: github-actions@touchless-364916.iam.gserviceaccount.com
 
     - id: 'deploy'
       name: 'Deployment started'
-      uses: 'google-github-actions/deploy-cloud-functions@v0'
+      uses: 'google-github-actions/deploy-cloud-functions@main'
       with:
         name: 'github-action'
         runtime: 'nodejs16'
