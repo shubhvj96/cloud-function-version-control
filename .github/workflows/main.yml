@@ -18,7 +18,7 @@ jobs:
         service_account: 'github-actions@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
-      name: 'dpeloyment started'
+      name: 'Deployment started'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
         name: 'github-action'
