@@ -14,7 +14,7 @@ jobs:
       uses: google-github-actions/auth@v0
       with:
         workload_identity_provider: 'https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-action-pool/providers/github-provider'
-        service_account: 'github-gcp-sa@touchless-364916.iam.gserviceaccount.com'
+        service_account: 'github-gcp@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
