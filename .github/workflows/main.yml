@@ -13,7 +13,8 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v0
       with:
-        workload_identity_provider: "//iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-action-pool/providers/github-provider"
+        audience: "//iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-action-pool/providers/github-provider"
+        workload_identity_provider: "https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-action-pool/providers/github-provider"
         service_account: 'github-gcp-sa@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
