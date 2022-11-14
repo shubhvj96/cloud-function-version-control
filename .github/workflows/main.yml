@@ -13,7 +13,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
-        workload_identity_provider: '/projects/619881049050/locations/global/workloadIdentityPools/github-pool/github-actions'
+        workload_identity_provider: 'https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
         service_account: 'github-actions@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
