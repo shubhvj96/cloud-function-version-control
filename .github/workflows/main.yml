@@ -21,5 +21,6 @@ jobs:
       name: 'Deployment started'
       uses: 'google-github-actions/deploy-cloud-functions@main'
       with:
+        project_id: touchless-364916
         name: 'github-action'
         runtime: 'nodejs16'
