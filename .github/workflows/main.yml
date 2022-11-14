@@ -16,7 +16,7 @@ jobs:
       with:
         audience: "https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
         workload_identity_provider: 'https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
-        service_account: 'github-actions@touchless-364916.iam.gserviceaccount.com'
+        service_account: 'touchless-364916@appspot.gserviceaccount.com'
 
     - id: 'deploy'
       name: 'Deployment started'
