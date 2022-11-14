@@ -8,19 +8,20 @@ jobs:
       id-token: 'write'
 
     steps:
-    - uses: 'actions/checkout@v2'
+    - uses: actions/checkout@v3
 
-    - id: 'auth'
-      name: 'Authenticate to Google Cloud'
-      uses: 'google-github-actions/auth@v1'
+    - id: auth
+      uses: google-github-actions/auth@v0
       with:
-        workload_identity_provider: 'projects/619881049050/locations/global/workloadIdentityPools/github-pool/github-provider'
+        workload_identity_provider: 'https://iam.googleapis.com/projects/619881049050/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
         service_account: 'github-actions@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
-      name: 'Deployment started'
-      uses: 'google-github-actions/deploy-cloud-functions@main'
+      uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
-        project_id: touchless-364916
-        name: 'github-action'
+        name: 'github-actions'
         runtime: 'nodejs16'
+
+    # Example of using the output
+    - id: 'test'
+      run: 'curl "${{ steps.deploy.outputs.url }}"'
