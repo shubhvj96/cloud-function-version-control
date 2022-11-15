@@ -24,7 +24,7 @@ jobs:
       with:
         node-version: 16
     - run: npm install
-      working-directory: /
+      working-directory: ./
 
     - id: 'deploy'
       name: 'deploying the function'
