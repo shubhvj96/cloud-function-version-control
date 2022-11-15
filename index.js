@@ -5,6 +5,6 @@
  * @param {!express:Response} res HTTP response context.
  */
 exports.helloWorld = (req, res) => {
-  let message = req.query.message || req.body.message || 'Hello World! from github and google..!!';
+  let message = req.query.message || req.body.message || 'Hello World! from github-gcp-actions';
   res.status(200).send(message);
 };
