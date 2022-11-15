@@ -20,7 +20,7 @@ jobs:
         service_account: 'github-gcp-sa@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
-      uses: 'google-github-actions/deploy-cloud-functions@v1'
+      uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
         name: 'cloud-function-version-control'
         runtime: 'nodejs16'
