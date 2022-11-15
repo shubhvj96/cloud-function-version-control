@@ -22,7 +22,7 @@ jobs:
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
-        name: 'cloud-function-version-control'
+        name: 'cloud-functions-version-control'
         runtime: 'nodejs16'
 
     # Example of using the output
