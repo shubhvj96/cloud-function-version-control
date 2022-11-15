@@ -16,11 +16,11 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v0
       with:
-        workload_identity_provider: "projects/619881049050/locations/global/workloadIdentityPools/github-gcp-pool/providers/githubprovider"
+        workload_identity_provider: "projects/619881049050/locations/global/workloadIdentityPools/github-gcp-pool/providers/github-provider"
         service_account: 'github-gcp-sa@touchless-364916.iam.gserviceaccount.com'
 
     - id: 'deploy'
-      uses: 'google-github-actions/deploy-cloud-functions@v0'
+      uses: 'google-github-actions/deploy-cloud-functions@v1'
       with:
         name: 'cloud-function-version-control'
         runtime: 'nodejs16'
