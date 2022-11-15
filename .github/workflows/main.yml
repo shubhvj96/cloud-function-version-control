@@ -32,7 +32,7 @@ jobs:
       with:
         name: 'cloud-function-version-control'
         runtime: 'nodejs16'
-        entrypoint: 'cloud-function-version-control/index.js'
+        entry_point: 'cloud-function-version-control/index.js'
 
     # Example of using the output
     - id: 'test'
