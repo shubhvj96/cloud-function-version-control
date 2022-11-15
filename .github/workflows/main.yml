@@ -18,6 +18,11 @@ jobs:
       with:
         workload_identity_provider: "projects/619881049050/locations/global/workloadIdentityPools/github-gcp-pool/providers/github-provider"
         service_account: 'github-gcp-sa@touchless-364916.iam.gserviceaccount.com'
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm install
+      working-directory: ./
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
