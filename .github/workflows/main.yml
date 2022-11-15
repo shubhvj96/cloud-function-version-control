@@ -32,6 +32,7 @@ jobs:
       with:
         name: 'cloud-function-version-control'
         runtime: 'nodejs16'
+        entry_point: 'helloWorld'
 
     # Example of using the output
     - id: 'test'
