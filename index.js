@@ -6,6 +6,6 @@
  */
 exports.helloWorld = (req, res) => {
   console.log("inside function");
-  let message = req.query.message || req.body.message || 'Hello World! from github-gcp-actions';
+  let message = req.query.message || req.body.message || 'Hello World! from github-gcp-actions...!';
   res.status(200).send(message);
 };
