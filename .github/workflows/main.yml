@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: 16
     - run: npm install
-      working-directory: ./
+      working-directory: cloud-function-version-control
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
