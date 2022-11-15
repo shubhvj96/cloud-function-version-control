@@ -14,21 +14,25 @@ jobs:
     - uses: actions/checkout@v3
 
     - id: auth
+      name: 'authenticating'
       uses: google-github-actions/auth@v0
       with:
         workload_identity_provider: "projects/619881049050/locations/global/workloadIdentityPools/github-gcp-pool/providers/github-provider"
         service_account: 'github-gcp-sa@touchless-364916.iam.gserviceaccount.com'
     - uses: actions/setup-node@v3
+      name: 'installing dependencies'
       with:
         node-version: 16
     - run: npm install
       working-directory: cloud-function-version-control
 
     - id: 'deploy'
+      name: 'deploying the function'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
         name: 'cloud-function-version-control'
         runtime: 'nodejs16'
+        entrypoint: 'cloud-function-version-control/index.js'
 
     # Example of using the output
     - id: 'test'
